@@ -1,4 +1,3 @@
-#include "push_swap.h"
 #include "t_deque.h"
 
 t_node	*node_init(int idx)
