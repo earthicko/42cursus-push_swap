@@ -59,8 +59,6 @@ void	print_deque_node_line(t_deque *this, void f_print(t_node *))
 
 void	print_deque(t_deque *this)
 {
-	t_node	*cursor;
-
 	printf("====deque size %.3d====\n", this->size);
 	printf("    head: [%.3lx]       \n", (size_t)this->head % 0x100);
 	printf("    tail: [%.3lx]       \n", (size_t)this->tail % 0x100);
