@@ -1,5 +1,5 @@
-#ifndef T_ARRAY_H
-# define T_ARRAY_H
+#ifndef ARRAY_H
+# define ARRAY_H
 # include <stdlib.h>
 # include "consts.h"
 # include "libft.h"

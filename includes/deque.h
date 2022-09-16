@@ -1,5 +1,5 @@
-#ifndef T_DEQUE_H
-# define T_DEQUE_H
+#ifndef DEQUE_H
+# define DEQUE_H
 # include <stdlib.h>
 # include "consts.h"
 

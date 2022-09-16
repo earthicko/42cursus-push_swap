@@ -1,5 +1,5 @@
-#ifndef T_STATE_H
-# define T_STATE_H
+#ifndef STATE_H
+# define STATE_H
 # include "deque.h"
 
 typedef struct s_state
