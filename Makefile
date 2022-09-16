@@ -3,10 +3,11 @@ LIBFT_DIR		= libft
 LIBFT			= libft.a
 LINK_LIBFT		= -L $(LIBFT_DIR) $(LIBFT_DIR)/$(LIBFT)
 INC_DIR_LIBFT	= -I $(LIBFT_DIR)
-INC_DIR			= -I . $(INC_DIR_LIBFT) -I includes
+INC_DIR_DEBUG	= -I includes_debug
+INC_DIR			= -I . $(INC_DIR_LIBFT) -I includes $(INC_DIR_DEBUG)
 
 SRCNAME_DEBUG	= \
-				./datatypes/deque_debug ./datatypes/state_debug
+				./debug/deque_debug ./debug/state_debug
 
 SRCNAME			= \
 				./datatypes/stack ./datatypes/deque ./datatypes/deque_methods ./datatypes/array ./datatypes/state \
@@ -25,28 +26,28 @@ CFLAGS			= -Wall -Wextra -Werror
 all : $(NAME)
 
 $(NAME) : $(LIBFT) $(OBJ) $(OBJ_DEBUG) $(NAME).o
-	$(CC) $(CFLAGS) $(INC_DIR) $(OBJ) $(OBJ_DEBUG) $(NAME).o $(LINK_LIBFT) -o $(NAME)
+	@$(CC) $(CFLAGS) $(INC_DIR) $(OBJ) $(OBJ_DEBUG) $(NAME).o $(LINK_LIBFT) -o $(NAME)
 
 $(LIBFT) :
 	make all -j 4 -C $(LIBFT_DIR)/
 
-test_deque : $(LIBFT) $(OBJ) $(OBJ_DEBUG) test_deque_main.o
-	$(CC) $(CFLAGS) $(INC_DIR) $(OBJ) $(OBJ_DEBUG) test_deque_main.o $(LINK_LIBFT) -o test_deque
+test_deque : $(LIBFT) $(OBJ) $(OBJ_DEBUG) debug/test_deque_main.o
+	$(CC) $(CFLAGS) $(INC_DIR) $(OBJ) $(OBJ_DEBUG) debug/test_deque_main.o $(LINK_LIBFT) -o test_deque
 	./test_deque
 
-test_array : $(LIBFT) $(OBJ) $(OBJ_DEBUG) test_array_main.o
-	$(CC) $(CFLAGS) $(INC_DIR) $(OBJ) $(OBJ_DEBUG) test_array_main.o $(LINK_LIBFT) -o test_array
+test_array : $(LIBFT) $(OBJ) $(OBJ_DEBUG) debug/test_array_main.o
+	$(CC) $(CFLAGS) $(INC_DIR) $(OBJ) $(OBJ_DEBUG) debug/test_array_main.o $(LINK_LIBFT) -o test_array
 	./test_array
 
-test_parser : $(LIBFT) $(OBJ) $(OBJ_DEBUG) test_parser_main.o
-	$(CC) $(CFLAGS) $(INC_DIR) $(OBJ) $(OBJ_DEBUG) test_parser_main.o $(LINK_LIBFT) -o test_parser
+test_parser : $(LIBFT) $(OBJ) $(OBJ_DEBUG) debug/test_parser_main.o
+	$(CC) $(CFLAGS) $(INC_DIR) $(OBJ) $(OBJ_DEBUG) debug/test_parser_main.o $(LINK_LIBFT) -o test_parser
 	./test_parser
 
 %.o : %.c
 	$(CC) $(CFLAGS) $(INC_DIR) -c $< -o $@
 
 clean_test :
-	$(RM) test_deque_main.o test_array_main.o test_parser_main.o
+	$(RM) debug/test_deque_main.o debug/test_array_main.o debug/test_parser_main.o
 
 clean : clean_test
 	$(RM) $(OBJ) $(OBJ_DEBUG) $(NAME).o
