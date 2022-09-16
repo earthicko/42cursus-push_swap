@@ -5,4 +5,5 @@
 # define CODE_ERROR_INVALID_VALUE -2
 # define CODE_ERROR_MALLOC -3
 # define CODE_ERROR_STACK_TOO_SMALL -100
+# define STR_ERROR "Error"
 #endif
