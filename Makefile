@@ -8,7 +8,7 @@ SRCNAME_DEBUG	= \
 				./datatypes/t_deque_debug
 
 SRCNAME			= \
-				./datatypes/stack ./datatypes/t_deque
+				./datatypes/stack ./datatypes/t_deque ./datatypes/t_array
 
 SRC				= $(addsuffix .c, $(SRCNAME))
 OBJ				= $(addsuffix .o, $(SRCNAME))
@@ -26,7 +26,10 @@ $(LIBFT) :
 $(NAME) : $(OBJ) $(LIBFT)
 
 test_deque : $(LIBFT) $(OBJ) $(OBJ_DEBUG) t_deque_main.o
-	$(CC) $(CFLAGS) $(INC_DIR) $(LIBFT_DIR)/$(LIBFT) $(OBJ) $(OBJ_DEBUG) t_deque_main.o -o test_deque
+	$(CC) $(CFLAGS) $(INC_DIR) -L ./$(LIBFT_DIR) $(OBJ) $(OBJ_DEBUG) t_deque_main.o -o test_deque
+
+test_list : $(LIBFT) $(OBJ) $(OBJ_DEBUG) t_list_main.o
+	$(CC) $(CFLAGS) $(INC_DIR) $(LIBFT_DIR)/$(LIBFT) $(OBJ) $(OBJ_DEBUG) t_list_main.o -o test_list
 
 %.o : %.c
 	$(CC) $(CFLAGS) $(INC_DIR) -c $< -o $@
