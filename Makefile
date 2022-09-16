@@ -32,15 +32,15 @@ $(LIBFT) :
 	make all -j 4 -C $(LIBFT_DIR)/
 
 test_deque : $(LIBFT) $(OBJ) $(OBJ_DEBUG) debug/test_deque_main.o
-	$(CC) $(CFLAGS) $(INC_DIR) $(OBJ) $(OBJ_DEBUG) debug/test_deque_main.o $(LINK_LIBFT) -o test_deque
+	@$(CC) $(CFLAGS) $(INC_DIR) $(OBJ) $(OBJ_DEBUG) debug/test_deque_main.o $(LINK_LIBFT) -o test_deque
 	./test_deque
 
 test_array : $(LIBFT) $(OBJ) $(OBJ_DEBUG) debug/test_array_main.o
-	$(CC) $(CFLAGS) $(INC_DIR) $(OBJ) $(OBJ_DEBUG) debug/test_array_main.o $(LINK_LIBFT) -o test_array
+	@$(CC) $(CFLAGS) $(INC_DIR) $(OBJ) $(OBJ_DEBUG) debug/test_array_main.o $(LINK_LIBFT) -o test_array
 	./test_array
 
 test_parser : $(LIBFT) $(OBJ) $(OBJ_DEBUG) debug/test_parser_main.o
-	$(CC) $(CFLAGS) $(INC_DIR) $(OBJ) $(OBJ_DEBUG) debug/test_parser_main.o $(LINK_LIBFT) -o test_parser
+	@$(CC) $(CFLAGS) $(INC_DIR) $(OBJ) $(OBJ_DEBUG) debug/test_parser_main.o $(LINK_LIBFT) -o test_parser
 	./test_parser
 
 %.o : %.c
