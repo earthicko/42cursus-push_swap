@@ -12,7 +12,7 @@ SRCNAME			= \
 				./datatypes/stack ./datatypes/t_deque ./datatypes/t_array ./datatypes/t_state \
 				./datatypes/t_state_swap_push ./datatypes/t_state_rotate ./datatypes/t_state_rev_rotate \
 				./parser/parser ./parser/ft_split_space ./parser/parser_utils ./parser/construct_stack \
-				./sorter/sort_stack
+				./sorter/sort_stack ./sorter/sort_manual
 
 SRC				= $(addsuffix .c, $(SRCNAME))
 OBJ				= $(addsuffix .o, $(SRCNAME))
