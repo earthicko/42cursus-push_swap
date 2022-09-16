@@ -1,13 +1,12 @@
 #include "t_state.h"
-#include "libft.h"
 
 t_state	*state_init(void)
 {
 	t_state	*init;
+
 	init = (t_state *)malloc(sizeof(t_state));
 	if (!init)
 		return (NULL);
-	ft_memset(init, 0, sizeof(t_state));
 	init->a = deque_init();
 	if (!init->a)
 	{
