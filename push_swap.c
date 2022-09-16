@@ -2,33 +2,7 @@
 #include "push_swap.h"
 #include "parser.h"
 
-void	state_del(t_state *state)
-{
-	deque_del(state->a);
-	deque_del(state->b);
-	free(state);
-}
-
-int	init_push_swap(t_state **state)
-{
-	*state = (t_state *)malloc(sizeof(t_state));
-	if (!(*state))
-		return (CODE_ERROR_MALLOC);
-	(*state)->a = deque_init();
-	if (!(*state)->a)
-	{
-		free(*state);
-		return (CODE_ERROR_MALLOC);
-	}
-	(*state)->b = deque_init();
-	if (!(*state)->b)
-	{
-		deque_del((*state)->a);
-		free(*state);
-		return (CODE_ERROR_MALLOC);
-	}
-	return (CODE_OK);
-}
+#include "t_deque_debug.h"
 
 int	parse_stack(t_state *state, int argc, char **argv)
 {
