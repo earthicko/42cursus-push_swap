@@ -8,7 +8,8 @@ SRCNAME_DEBUG	= \
 				./datatypes/t_deque_debug
 
 SRCNAME			= \
-				./datatypes/stack ./datatypes/t_deque ./datatypes/t_array
+				./datatypes/stack ./datatypes/t_deque ./datatypes/t_array \
+				./parser/parser
 
 SRC				= $(addsuffix .c, $(SRCNAME))
 OBJ				= $(addsuffix .o, $(SRCNAME))
