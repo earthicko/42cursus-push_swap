@@ -3,8 +3,6 @@
 #include "parser.h"
 #include "sorter.h"
 
-#include "t_deque_debug.h"
-
 int	parse_stack(t_state *state, int argc, char **argv)
 {
 	t_array	*arr;

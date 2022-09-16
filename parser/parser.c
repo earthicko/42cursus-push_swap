@@ -1,5 +1,5 @@
 #include "parser.h"
-#include <stdio.h>
+
 void	init_append_arg_to_array(char **args, int *n_split, int *res, int *i)
 {
 	*n_split = 0;
