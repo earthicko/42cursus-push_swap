@@ -36,10 +36,7 @@ int	main(int argc, char **argv)
 		ft_putendl_fd(STR_ERROR, STDOUT_FILENO);
 		return (res);
 	}
-	print_deque(state->a);
-	print_deque(state->b);
-	res = sort_stack(state);
+	res = sort_a_to_b(state, state->a->size);
 	state_del(state);
-	system("leaks push_swap");
 	return (res);
 }
