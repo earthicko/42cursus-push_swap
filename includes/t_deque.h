@@ -19,9 +19,9 @@ typedef struct s_deque
 
 t_node	*node_init(int idx);
 t_deque	*deque_init(void);
-int		deque_del(t_deque *deque);
-int		deque_push_head(t_deque *deque, t_node *node);
-int		deque_push_tail(t_deque *deque, t_node *node);
+void	deque_del(t_deque *deque);
+void	deque_push_head(t_deque *deque, t_node *node);
+void	deque_push_tail(t_deque *deque, t_node *node);
 t_node	*deque_pop_head(t_deque *deque);
 t_node	*deque_pop_tail(t_deque *deque);
 

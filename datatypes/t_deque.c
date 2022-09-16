@@ -26,7 +26,7 @@ t_deque	*deque_init(void)
 	return (init);
 }
 
-int	deque_del(t_deque *this)
+void	deque_del(t_deque *this)
 {
 	t_node	*cursor;
 	t_node	*cursor_next;
@@ -39,10 +39,9 @@ int	deque_del(t_deque *this)
 		cursor = cursor_next;
 	}
 	free(this);
-	return (CODE_OK);
 }
 
-int	deque_push_head(t_deque *this, t_node *node)
+void	deque_push_head(t_deque *this, t_node *node)
 {
 	t_node	*head_prev;
 
@@ -55,10 +54,9 @@ int	deque_push_head(t_deque *this, t_node *node)
 	else
 		head_prev->prev = node;
 	this->size++;
-	return (CODE_OK);
 }
 
-int	deque_push_tail(t_deque *this, t_node *node)
+void	deque_push_tail(t_deque *this, t_node *node)
 {
 	t_node	*tail_prev;
 
@@ -71,7 +69,6 @@ int	deque_push_tail(t_deque *this, t_node *node)
 	else
 		tail_prev->next = node;
 	this->size++;
-	return (CODE_OK);
 }
 
 t_node	*deque_pop_head(t_deque *this)
