@@ -9,9 +9,10 @@ SRCNAME_DEBUG	= \
 				./datatypes/t_deque_debug
 
 SRCNAME			= \
-				./datatypes/stack ./datatypes/t_deque ./datatypes/t_array \
-				./parser/parser ./parser/ft_split_space ./parser/parser_utils \
-				./parser/construct_stack \
+				./datatypes/stack ./datatypes/t_deque ./datatypes/t_array ./datatypes/t_state \
+				./datatypes/t_state_swap_push ./datatypes/t_state_rotate ./datatypes/t_state_rev_rotate \
+				./parser/parser ./parser/ft_split_space ./parser/parser_utils ./parser/construct_stack \
+				./sorter/sort_stack
 
 SRC				= $(addsuffix .c, $(SRCNAME))
 OBJ				= $(addsuffix .o, $(SRCNAME))
@@ -23,10 +24,11 @@ CFLAGS			= -Wall -Wextra -Werror
 
 all : $(NAME)
 
+$(NAME) : $(LIBFT) $(OBJ) $(OBJ_DEBUG) $(NAME).o
+	$(CC) $(CFLAGS) $(INC_DIR) $(LINK_LIBFT) $(OBJ) $(OBJ_DEBUG) $(NAME).o -o $(NAME)
+
 $(LIBFT) :
 	make all -j 4 -C $(LIBFT_DIR)/
-
-$(NAME) : $(OBJ) $(LIBFT)
 
 test_deque : $(LIBFT) $(OBJ) $(OBJ_DEBUG) t_deque_main.o
 	$(CC) $(CFLAGS) $(INC_DIR) $(LINK_LIBFT) $(OBJ) $(OBJ_DEBUG) t_deque_main.o -o test_deque
@@ -47,7 +49,7 @@ clean_test :
 	$(RM) t_deque_main.o t_array_main.o parser_main.o
 
 clean : clean_test
-	$(RM) $(OBJ) $(OBJ_DEBUG)
+	$(RM) $(OBJ) $(OBJ_DEBUG) $(NAME).o
 	make clean -C $(LIBFT_DIR)
 
 fclean_test :
