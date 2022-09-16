@@ -25,21 +25,21 @@ CFLAGS			= -Wall -Wextra -Werror
 all : $(NAME)
 
 $(NAME) : $(LIBFT) $(OBJ) $(OBJ_DEBUG) $(NAME).o
-	$(CC) $(CFLAGS) $(INC_DIR) $(LINK_LIBFT) $(OBJ) $(OBJ_DEBUG) $(NAME).o -o $(NAME)
+	$(CC) $(CFLAGS) $(INC_DIR) $(OBJ) $(OBJ_DEBUG) $(NAME).o $(LINK_LIBFT) -o $(NAME)
 
 $(LIBFT) :
 	make all -j 4 -C $(LIBFT_DIR)/
 
 test_deque : $(LIBFT) $(OBJ) $(OBJ_DEBUG) t_deque_main.o
-	$(CC) $(CFLAGS) $(INC_DIR) $(LINK_LIBFT) $(OBJ) $(OBJ_DEBUG) t_deque_main.o -o test_deque
+	$(CC) $(CFLAGS) $(INC_DIR) $(OBJ) $(OBJ_DEBUG) t_deque_main.o $(LINK_LIBFT) -o test_deque
 	./test_deque
 
 test_array : $(LIBFT) $(OBJ) $(OBJ_DEBUG) t_array_main.o
-	$(CC) $(CFLAGS) $(INC_DIR) $(LINK_LIBFT) $(OBJ) $(OBJ_DEBUG) t_array_main.o -o test_array
+	$(CC) $(CFLAGS) $(INC_DIR) $(OBJ) $(OBJ_DEBUG) t_array_main.o $(LINK_LIBFT) -o test_array
 	./test_array
 
 test_parser : $(LIBFT) $(OBJ) $(OBJ_DEBUG) parser_main.o
-	$(CC) $(CFLAGS) $(INC_DIR) $(LINK_LIBFT) $(OBJ) $(OBJ_DEBUG) parser_main.o -o test_parser
+	$(CC) $(CFLAGS) $(INC_DIR) $(OBJ) $(OBJ_DEBUG) parser_main.o $(LINK_LIBFT) -o test_parser
 	./test_parser
 
 %.o : %.c
