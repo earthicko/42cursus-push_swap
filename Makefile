@@ -6,13 +6,13 @@ INC_DIR_LIBFT	= -I $(LIBFT_DIR)
 INC_DIR			= -I . $(INC_DIR_LIBFT) -I includes
 
 SRCNAME_DEBUG	= \
-				./datatypes/t_deque_debug
+				./datatypes/t_deque_debug ./datatypes/t_state_debug
 
 SRCNAME			= \
-				./datatypes/stack ./datatypes/t_deque ./datatypes/t_array ./datatypes/t_state \
+				./datatypes/stack ./datatypes/t_deque ./datatypes/t_deque_methods ./datatypes/t_array ./datatypes/t_state \
 				./datatypes/t_state_swap_push ./datatypes/t_state_rotate ./datatypes/t_state_rev_rotate \
 				./parser/parser ./parser/ft_split_space ./parser/parser_utils ./parser/construct_stack \
-				./sorter/sort_stack ./sorter/sort_manual
+				./sorter/sort_stack_utils ./sorter/sort_manual ./sorter/sort_a_to_b ./sorter/sort_b_to_a
 
 SRC				= $(addsuffix .c, $(SRCNAME))
 OBJ				= $(addsuffix .o, $(SRCNAME))
