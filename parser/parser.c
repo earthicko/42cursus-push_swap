@@ -1,21 +1,5 @@
-#include "libft.h"
-#include "t_array.h"
-
-void	free_strs(char **strs)
-{
-	int	i;
-
-	if (!strs)
-		return ;
-	i = 0;
-	while(strs[i])
-	{
-		free(strs[i]);
-		i++;
-	}
-	free(strs);
-}
-
+#include "parser.h"
+#include <stdio.h>
 void	init_append_arg_to_array(char **args, int *n_split, int *res, int *i)
 {
 	*n_split = 0;
@@ -32,7 +16,7 @@ int	append_arg_to_array(t_array *arr, char *arg)
 	int		res;
 	int		i;
 
-	arg_split = ft_split(arg, ' ');
+	arg_split = ft_split_space(arg);
 	if (!arg_split)
 		return (CODE_ERROR_MALLOC);
 	init_append_arg_to_array(arg_split, &n_split, &res, &i);

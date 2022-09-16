@@ -10,7 +10,8 @@ SRCNAME_DEBUG	= \
 
 SRCNAME			= \
 				./datatypes/stack ./datatypes/t_deque ./datatypes/t_array \
-				./parser/parser
+				./parser/parser ./parser/ft_split_space ./parser/parser_utils \
+				./parser/construct_stack \
 
 SRC				= $(addsuffix .c, $(SRCNAME))
 OBJ				= $(addsuffix .o, $(SRCNAME))
