@@ -6,12 +6,17 @@ typedef struct s_state
 {
 	t_deque	*a;
 	t_deque	*b;
-	int		div[4];
-	int		chunk_size[3];
 }	t_state;
+
+typedef struct s_chunksize
+{
+	int		div[4];
+	int		size[3];
+}	t_chunksize;
 
 t_state	*state_init(void);
 void	state_del(t_state *state);
+int		do_n_times(t_state *state, int f(t_state *), int n);
 
 int		sa(t_state *state);
 int		sb(t_state *state);
