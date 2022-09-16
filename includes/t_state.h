@@ -6,9 +6,8 @@ typedef struct s_state
 {
 	t_deque	*a;
 	t_deque	*b;
-	int		min;
-	int		max;
-	int		mid[2];
+	int		div[4];
+	int		chunk_size[3];
 }	t_state;
 
 t_state	*state_init(void);
