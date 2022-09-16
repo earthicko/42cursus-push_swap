@@ -36,14 +36,14 @@ int	main(int argc, char **argv)
 	state = state_init();
 	if (!state)
 	{
-		ft_putendl_fd(STR_ERROR, STDOUT_FILENO);
+		ft_putendl_fd(STR_ERROR, STDERR_FILENO);
 		return (CODE_ERROR_MALLOC);
 	}
 	res = parse_stack(state, argc, argv);
 	if (res < 0)
 	{
 		state_del(state);
-		ft_putendl_fd(STR_ERROR, STDOUT_FILENO);
+		ft_putendl_fd(STR_ERROR, STDERR_FILENO);
 		return (res);
 	}
 	res = sort_a_to_b(state, state->a->size);
