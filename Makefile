@@ -1,6 +1,7 @@
 NAME			= push_swap
 LIBFT_DIR		= libft
 LIBFT			= libft.a
+LINK_LIBFT		= -L $(LIBFT_DIR) $(LIBFT_DIR)/$(LIBFT)
 INC_DIR_LIBFT	= -I $(LIBFT_DIR)
 INC_DIR			= -I . $(INC_DIR_LIBFT) -I includes
 
@@ -27,10 +28,16 @@ $(LIBFT) :
 $(NAME) : $(OBJ) $(LIBFT)
 
 test_deque : $(LIBFT) $(OBJ) $(OBJ_DEBUG) t_deque_main.o
-	$(CC) $(CFLAGS) $(INC_DIR) -L ./$(LIBFT_DIR) $(OBJ) $(OBJ_DEBUG) t_deque_main.o -o test_deque
+	$(CC) $(CFLAGS) $(INC_DIR) $(LINK_LIBFT) $(OBJ) $(OBJ_DEBUG) t_deque_main.o -o test_deque
+	./test_deque
 
-test_list : $(LIBFT) $(OBJ) $(OBJ_DEBUG) t_list_main.o
-	$(CC) $(CFLAGS) $(INC_DIR) $(LIBFT_DIR)/$(LIBFT) $(OBJ) $(OBJ_DEBUG) t_list_main.o -o test_list
+test_array : $(LIBFT) $(OBJ) $(OBJ_DEBUG) t_array_main.o
+	$(CC) $(CFLAGS) $(INC_DIR) $(LINK_LIBFT) $(OBJ) $(OBJ_DEBUG) t_array_main.o -o test_array
+	./test_array
+
+test_parser : $(LIBFT) $(OBJ) $(OBJ_DEBUG) parser_main.o
+	$(CC) $(CFLAGS) $(INC_DIR) $(LINK_LIBFT) $(OBJ) $(OBJ_DEBUG) parser_main.o -o test_parser
+	./test_parser
 
 %.o : %.c
 	$(CC) $(CFLAGS) $(INC_DIR) -c $< -o $@
