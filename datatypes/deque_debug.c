@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "t_deque.h"
+#include "deque.h"
 
 void	print_node_title(t_node *node)
 {

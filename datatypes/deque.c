@@ -1,4 +1,4 @@
-#include "t_deque.h"
+#include "deque.h"
 
 t_node	*node_init(int idx)
 {

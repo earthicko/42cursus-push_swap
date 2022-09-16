@@ -1,4 +1,4 @@
-#include "t_array.h"
+#include "array.h"
 
 t_array	*array_init(int init_cap)
 {

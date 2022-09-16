@@ -1,6 +1,6 @@
 #ifndef T_STATE_H
 # define T_STATE_H
-# include "t_deque.h"
+# include "deque.h"
 
 typedef struct s_state
 {

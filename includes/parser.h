@@ -1,7 +1,7 @@
 #ifndef PARSER_H
 # define PARSER_H
-# include "t_deque.h"
-# include "t_array.h"
+# include "deque.h"
+# include "array.h"
 
 t_array	*parse_args(int argc, char **argv);
 int		construct_stack(t_deque *stack, t_array *arr);

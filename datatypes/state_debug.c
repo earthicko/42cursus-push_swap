@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "t_state_debug.h"
+#include "state_debug.h"
 
 void	print_state(t_state *state)
 {

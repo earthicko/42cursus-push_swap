@@ -1,6 +1,6 @@
-#include "t_deque.h"
+#include "deque.h"
 #include <stdio.h>
-#include "t_deque_debug.h"
+#include "deque_debug.h"
 
 int	main(void)
 {

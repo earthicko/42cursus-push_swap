@@ -1,4 +1,4 @@
-#include "t_state.h"
+#include "state.h"
 
 int	sort_two_a(t_state *state)
 {

@@ -1,4 +1,4 @@
-#include "t_state.h"
+#include "state.h"
 
 t_state	*state_init(void)
 {

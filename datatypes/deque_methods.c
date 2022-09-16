@@ -1,4 +1,4 @@
-#include "t_deque.h"
+#include "deque.h"
 
 void	deque_push_head(t_deque *this, t_node *node)
 {

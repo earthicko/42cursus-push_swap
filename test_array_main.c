@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "t_array.h"
+#include "array.h"
 
 int main()
 {
