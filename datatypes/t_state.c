@@ -1,4 +1,5 @@
 #include "t_state.h"
+#include "libft.h"
 
 t_state	*state_init(void)
 {
@@ -6,6 +7,7 @@ t_state	*state_init(void)
 	init = (t_state *)malloc(sizeof(t_state));
 	if (!init)
 		return (NULL);
+	ft_memset(init, 0, sizeof(t_state));
 	init->a = deque_init();
 	if (!init->a)
 	{
@@ -19,10 +21,6 @@ t_state	*state_init(void)
 		free(init);
 		return (NULL);
 	}
-	init->min = 0;
-	init->max = 0;
-	init->mid[0] = 0;
-	init->mid[1] = 0;
 	return (init);
 }
 
