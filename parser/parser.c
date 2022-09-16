@@ -3,7 +3,7 @@
 void	init_append_arg_to_array(char **args, int *n_split, int *res, int *i)
 {
 	*n_split = 0;
-	while(args[*n_split])
+	while (args[*n_split])
 		(*n_split)++;
 	*res = CODE_OK;
 	*i = 0;

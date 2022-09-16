@@ -7,7 +7,7 @@ void	free_strs(char **strs)
 	if (!strs)
 		return ;
 	i = 0;
-	while(strs[i])
+	while (strs[i])
 	{
 		free(strs[i]);
 		i++;
@@ -17,7 +17,7 @@ void	free_strs(char **strs)
 
 int	ft_isspace(char c)
 {
-	if (c == '\t'|| c == '\n' || c == '\v')
+	if (c == '\t' || c == '\n' || c == '\v')
 		return (1);
 	if (c == '\f' || c == '\r' || c == ' ')
 		return (1);

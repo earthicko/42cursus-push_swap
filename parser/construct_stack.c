@@ -6,7 +6,7 @@ int	construct_stack(t_deque *stack, t_array *arr)
 	int		i;
 	int		j;
 	int		idx;
-	
+
 	i = 0;
 	while (i < arr->len)
 	{
