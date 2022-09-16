@@ -42,11 +42,17 @@ test_parser : $(LIBFT) $(OBJ) $(OBJ_DEBUG) parser_main.o
 %.o : %.c
 	$(CC) $(CFLAGS) $(INC_DIR) -c $< -o $@
 
-clean :
+clean_test :
+	$(RM) t_deque_main.o t_array_main.o parser_main.o
+
+clean : clean_test
 	$(RM) $(OBJ) $(OBJ_DEBUG)
 	make clean -C $(LIBFT_DIR)
 
-fclean : clean
+fclean_test :
+	$(RM) test_deque test_array test_parser
+
+fclean : clean fclean_test
 	$(RM) $(NAME)
 	make fclean -C $(LIBFT_DIR)
 
