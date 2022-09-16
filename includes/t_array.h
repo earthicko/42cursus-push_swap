@@ -12,5 +12,6 @@ typedef struct s_array
 }	t_array;
 
 t_array	*array_init(int init_cap);
+void	array_del(t_array *this);
 int		array_append(t_array *array, int item);
 #endif

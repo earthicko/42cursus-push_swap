@@ -18,6 +18,15 @@ t_array	*array_init(int init_cap)
 	return (init);
 }
 
+void	array_del(t_array *this)
+{
+	free(this->data);
+	free(this);
+}
+
+// Resize array;
+// error when provided size is less than data length.
+// error when malloc() fails.
 int	array_resize(t_array *this, int size)
 {
 	int	*new_data;
@@ -30,6 +39,7 @@ int	array_resize(t_array *this, int size)
 	ft_memcpy(new_data, this->data, sizeof(int) * this->len);
 	free(this->data);
 	this->data = new_data;
+	this->cap = size;
 	return (CODE_OK);
 }
 
