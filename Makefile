@@ -13,7 +13,8 @@ SRCNAME			= \
 				./datatypes/stack ./datatypes/deque ./datatypes/deque_methods ./datatypes/array ./datatypes/state \
 				./datatypes/state_swap_push ./datatypes/state_rotate ./datatypes/state_rev_rotate \
 				./parser/parser ./parser/ft_split_space ./parser/parser_utils ./parser/construct_stack ./parser/ft_atoi_if_valid \
-				./sorter/sort_stack_utils ./sorter/sort_manual ./sorter/sort_a_to_b ./sorter/sort_b_to_a
+				./sorter/sort_stack_utils ./sorter/sort_a_to_b ./sorter/sort_b_to_a \
+				./sorter/sort_manual_2x ./sorter/sort_manual_3x ./sorter/sort_manual_a_3x_utils ./sorter/sort_manual_b_3x_utils \
 
 SRC				= $(addsuffix .c, $(SRCNAME))
 OBJ				= $(addsuffix .o, $(SRCNAME))

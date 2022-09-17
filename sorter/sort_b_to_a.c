@@ -19,7 +19,11 @@ int	manual_sort_b_to_a(t_state *state, int depth)
 	if (depth == 1)
 		return (pa(state));
 	if (depth == 2)
-		return (sort_two_b(state));
+		return (sort_b_2x(state));
+	if (depth == 3 && state->a->size == 3)
+		return (sort_b_3x(state, 1));
+	if (depth == 3 && state->a->size != 3)
+		return (sort_b_3x(state, 0));
 	return (CODE_ERROR_INVALID_VALUE);
 }
 
@@ -99,7 +103,7 @@ int	sort_b_to_a(t_state *state, int depth)
 
 	if (is_stack_sorted(state->b, SORT_DSC))
 		return (do_n_times(state, pa, depth));
-	if (depth <= 2)
+	if (depth <= 3)
 		return (manual_sort_b_to_a(state, depth));
 	res = analyse_chunk(&chunksize, state->b, depth);
 	if (res < 0)

@@ -12,7 +12,7 @@
 
 #include "state.h"
 
-int	sort_two_a(t_state *state)
+int	sort_a_2x(t_state *state)
 {
 	if (state->a->size < 2)
 		return (CODE_ERROR_INVALID_VALUE);
@@ -21,7 +21,7 @@ int	sort_two_a(t_state *state)
 	return (CODE_OK);
 }
 
-int	sort_two_b(t_state *state)
+int	sort_b_2x(t_state *state)
 {
 	if (state->b->size < 2)
 		return (CODE_ERROR_INVALID_VALUE);
