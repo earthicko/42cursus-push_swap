@@ -12,7 +12,7 @@ SRCNAME_DEBUG	= \
 SRCNAME			= \
 				./datatypes/stack ./datatypes/deque ./datatypes/deque_methods ./datatypes/array ./datatypes/state \
 				./datatypes/state_swap_push ./datatypes/state_rotate ./datatypes/state_rev_rotate \
-				./parser/parser ./parser/ft_split_space ./parser/parser_utils ./parser/construct_stack \
+				./parser/parser ./parser/ft_split_space ./parser/parser_utils ./parser/construct_stack ./parser/ft_atoi_if_valid \
 				./sorter/sort_stack_utils ./sorter/sort_manual ./sorter/sort_a_to_b ./sorter/sort_b_to_a
 
 SRC				= $(addsuffix .c, $(SRCNAME))
