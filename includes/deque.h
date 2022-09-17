@@ -13,7 +13,6 @@
 #ifndef DEQUE_H
 # define DEQUE_H
 # include <stdlib.h>
-# include "consts.h"
 
 typedef struct s_node
 {

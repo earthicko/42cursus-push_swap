@@ -12,6 +12,7 @@
 
 #ifndef STATE_H
 # define STATE_H
+# include "consts.h"
 # include "deque.h"
 
 typedef struct s_state

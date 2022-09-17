@@ -12,6 +12,7 @@
 
 #ifndef STACK_H
 # define STACK_H
+# include "consts.h"
 # include "deque.h"
 
 int	stack_swap(t_deque *this);
