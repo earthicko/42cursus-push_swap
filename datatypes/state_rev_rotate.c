@@ -32,8 +32,8 @@ int	rrr(t_state *state)
 	int	res[2];
 
 	ft_putendl_fd("rrr", STDOUT_FILENO);
-	res[0] = rra(state);
-	res[1] = rrb(state);
+	res[0] = stack_rev_rotate(state->a);
+	res[1] = stack_rev_rotate(state->b);
 	if (res[0] == CODE_OK && res[1] == CODE_OK)
 		return (CODE_OK);
 	return (CODE_ERROR_STACK_TOO_SMALL);
