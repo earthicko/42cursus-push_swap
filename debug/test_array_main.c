@@ -3,7 +3,9 @@
 
 int main()
 {
-	t_array *array = array_init(1);
+	t_array *array;
+	
+	array = array_init(1);
 	array_append(array, 1);
 	printf("array len %d cap %d\n", array->len, array->cap);
 	for(int i=0;i<array->len;i++) printf("[%d] ", array->data[i]);
