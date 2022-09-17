@@ -12,6 +12,17 @@
 
 #include "parser.h"
 
+int	append_to_array_if_valid(t_array *arr, char *arg_split)
+{
+	int	res;
+	int	arg;
+
+	res = ft_atoi_if_valid(arg_split, &arg);
+	if (res < 0)
+		return (res);
+	return (array_append(arr, arg));
+}
+
 void	init_append_arg_to_array(char **args, int *n_split, int *res, int *i)
 {
 	*n_split = 0;
@@ -33,7 +44,7 @@ int	append_arg_to_array(t_array *arr, char *arg)
 		return (CODE_ERROR_MALLOC);
 	init_append_arg_to_array(arg_split, &n_split, &res, &i);
 	if (n_split == 1)
-		res = array_append(arr, ft_atoi(arg_split[0]));
+		res = append_to_array_if_valid(arr, arg_split[0]);
 	else if (n_split > 1)
 	{
 		while (arg_split[i])
