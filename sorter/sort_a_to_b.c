@@ -23,19 +23,28 @@ int	manual_sort_a_to_b(t_state *state, int depth)
 
 int	rev_rotate_a_to_b(t_state *state, t_chunksize *chunksize)
 {
+	int	n_rra;
+	int	n_rrb;
 	int	n_rrr;
 	int	res;
 
-	n_rrr = chunksize->size[1];
-	if (chunksize->size[2] < n_rrr)
-		n_rrr = chunksize->size[2];
+	n_rra = chunksize->size[2];
+	n_rrb = chunksize->size[1];
+	if (state->a->size < 2)
+		n_rra = 0;
+	if (state->b->size < 2)
+		n_rrb = 0;
+	if (n_rra < n_rrb)
+		n_rrr = n_rra;
+	else
+		n_rrr = n_rrb;
 	res = do_n_times(state, rrr, n_rrr);
 	if (res < 0)
 		return (res);
-	res = do_n_times(state, rrb, chunksize->size[1] - n_rrr);
+	res = do_n_times(state, rrb, n_rrb - n_rrr);
 	if (res < 0)
 		return (res);
-	res = do_n_times(state, rra, chunksize->size[2] - n_rrr);
+	res = do_n_times(state, rra, n_rra - n_rrr);
 	return (res);
 }
 
