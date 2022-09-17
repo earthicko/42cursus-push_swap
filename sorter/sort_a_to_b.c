@@ -99,7 +99,9 @@ int	sort_a_to_b(t_state *state, int depth)
 		return (CODE_OK);
 	if (depth <= 2)
 		return (manual_sort_a_to_b(state, depth));
-	analyse_chunk(&chunksize, state->a, depth);
+	res = analyse_chunk(&chunksize, state->a, depth);
+	if (res < 0)
+		return (res);
 	res = divide_a_to_b(state, &chunksize, depth);
 	if (res < 0)
 		return (res);

@@ -13,28 +13,77 @@
 #include <limits.h>
 #include "sorter.h"
 #include "libft.h"
-
-void	analyse_chunk(t_chunksize *size, t_deque *stack, int depth)
+#include "array.h"
+t_array	*array_init_from_stack(t_deque *stack, int depth)
 {
-	int		i;
+	t_array	*init;
 	t_node	*node;
 
-	size->div[0] = INT_MAX;
-	size->div[3] = INT_MIN;
-	ft_memset(size->size, 0, sizeof(size->size));
+	if (depth > stack->size)
+		return (NULL);
+	init = array_init(depth);
+	if (!init)
+		return (NULL);
 	node = stack->head;
-	i = 0;
-	while (i < depth)
+	while (depth--)
 	{
-		if (node->idx < size->div[0])
-			size->div[0] = node->idx;
-		if (node->idx > size->div[3])
-			size->div[3] = node->idx;
+		array_append(init, node->idx);
 		node = node->next;
-		i++;
 	}
-	size->div[1] = size->div[0] + (size->div[3] - size->div[0]) / 3;
-	size->div[2] = size->div[0] + 2 * (size->div[3] - size->div[0]) / 3;
+	return (init);
+}
+
+void	swap(int *a, int *b)
+{
+	int	temp;
+
+	temp = *a;
+	*a = *b;
+	*b = temp;
+}
+
+void	ft_sort_int_tab(int *tab, int size)
+{
+	int	idx_max_dest;
+	int	idx_max_curr;
+	int	val_max_curr;
+	int	idx_search;
+
+	idx_max_dest = size - 1;
+	while (0 <= idx_max_dest)
+	{
+		val_max_curr = INT_MIN;
+		idx_max_curr = -1;
+		idx_search = 0;
+		while (idx_search <= idx_max_dest)
+		{
+			if (val_max_curr <= tab[idx_search])
+			{
+				val_max_curr = tab[idx_search];
+				idx_max_curr = idx_search;
+			}
+			idx_search++;
+		}
+		swap(&(tab[idx_max_dest]), &(tab[idx_max_curr]));
+		idx_max_dest--;
+	}
+}
+
+int	analyse_chunk(t_chunksize *size, t_deque *stack, int depth)
+{
+	t_array	*sorted_idx;
+
+	ft_memset(size->size, 0, sizeof(size->size));
+	sorted_idx = array_init_from_stack(stack, depth);
+	if (!sorted_idx)
+		return (CODE_ERROR_MALLOC);
+	ft_sort_int_tab(sorted_idx->data, depth);
+	size->div[0] = sorted_idx->data[0];
+	size->div[1] = sorted_idx->data[depth / 3];
+	size->div[2] = sorted_idx->data[depth * 2 / 3];
+	size->div[3] = sorted_idx->data[depth - 1];
+	array_del(sorted_idx);
+	return (CODE_OK);
 }
 
 int	dispatch_by_chunk(t_chunksize *chunksize, t_deque *stack)
