@@ -81,3 +81,16 @@ t_array	*parse_args(int argc, char **argv)
 	}
 	return (ints);
 }
+
+int	parse_stack(t_state *state, int argc, char **argv)
+{
+	t_array	*arr;
+	int		res;
+
+	arr = parse_args(argc, argv);
+	if (!arr)
+		return (CODE_ERROR_MALLOC);
+	res = construct_stack(state->a, arr);
+	array_del(arr);
+	return (res);
+}
