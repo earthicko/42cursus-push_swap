@@ -57,18 +57,23 @@ int	dispatch_b_to_a(t_state *state, t_chunksize *chunksize)
 
 	chunk_i = dispatch_by_chunk(chunksize, state->b);
 	if (chunk_i == 0)
-		return (rb(state));
+	{
+		if (state->b->size > 1)
+			return (rb(state));
+	}
 	else if (chunk_i == 1)
 	{
 		res = pa(state);
 		if (res < 0)
 			return (res);
-		return (ra(state));
+		if (state->a->size > 1)
+			return (ra(state));
 	}
 	else if (chunk_i == 2)
 		return (pa(state));
 	else
 		return (CODE_ERROR_INVALID_VALUE);
+	return (CODE_OK);
 }
 
 int	divide_b_to_a(t_state *state, t_chunksize *chunksize, int depth)

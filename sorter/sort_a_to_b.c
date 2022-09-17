@@ -61,12 +61,17 @@ int	dispatch_a_to_b(t_state *state, t_chunksize *chunksize)
 		res = pb(state);
 		if (res < 0)
 			return (res);
-		return (rb(state));
+		if (state->b->size > 1)
+			return (rb(state));
 	}
 	else if (chunk_i == 2)
-		return (ra(state));
+	{
+		if (state->a->size > 1)
+			return (ra(state));
+	}
 	else
 		return (CODE_ERROR_INVALID_VALUE);
+	return (CODE_OK);
 }
 
 int	divide_a_to_b(t_state *state, t_chunksize *chunksize, int depth)
