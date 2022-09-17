@@ -83,6 +83,8 @@ int	sort_b_to_a(t_state *state, int depth)
 	int			res;
 	t_chunksize	chunksize;
 
+	if (is_stack_sorted(state->b, SORT_DSC))
+		return (do_n_times(state, pa, depth));
 	if (depth <= 2)
 		return (manual_sort_b_to_a(state, depth));
 	analyse_chunk(&chunksize, state->b, depth);

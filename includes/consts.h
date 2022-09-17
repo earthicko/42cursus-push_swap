@@ -20,4 +20,6 @@
 # define CODE_ERROR_NOT_A_NUMBER -201
 # define CODE_ERROR_OUT_OF_RANGE_INT -202
 # define STR_ERROR "Error"
+# define SORT_ASC 1
+# define SORT_DSC -1
 #endif

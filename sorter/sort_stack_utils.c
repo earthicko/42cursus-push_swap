@@ -54,3 +54,26 @@ int	dispatch_by_chunk(t_chunksize *chunksize, t_deque *stack)
 	chunksize->size[chunk_i]++;
 	return (chunk_i);
 }
+
+int	is_stack_sorted(t_deque *stack, int order)
+{
+	t_node	*cursor_prev;
+	t_node	*cursor;
+
+	if (order != SORT_ASC && order != SORT_DSC)
+		return (CODE_ERROR_INVALID_VALUE);
+	if (stack->size <= 1)
+		return (1);
+	cursor_prev = stack->head;
+	cursor = stack->head->next;
+	while (cursor != NULL)
+	{
+		if (order == SORT_ASC && cursor_prev->idx > cursor->idx)
+			return (0);
+		else if (order == SORT_DSC && cursor_prev->idx < cursor->idx)
+			return (0);
+		cursor = cursor->next;
+		cursor_prev = cursor_prev->next;
+	}
+	return (1);
+}
