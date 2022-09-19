@@ -44,9 +44,11 @@ int	append_arg_to_array(t_array *arr, char *arg)
 	if (!arg_split)
 		return (CODE_ERROR_MALLOC);
 	init_append_arg_to_array(arg_split, &n_split, &res, &i);
-	if (n_split == 1)
+	if (n_split <= 0)
+		res = CODE_ERROR_NOT_A_NUMBER;
+	else if (n_split == 1)
 		res = append_to_array_if_valid(arr, arg_split[0]);
-	else if (n_split > 1)
+	else
 	{
 		while (arg_split[i])
 		{
