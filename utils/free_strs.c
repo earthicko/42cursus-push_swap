@@ -1,20 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.h                                            :+:      :+:    :+:   */
+/*   free_strs.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: donghyle <donghyle@student.42seoul.kr>     +#+  +:+       +#+        */
+/*   By: dh <marvin@42.fr>                          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/19 17:28:04 by donghyle          #+#    #+#             */
-/*   Updated: 2022/09/19 17:28:06 by donghyle         ###   ########.fr       */
+/*   Created: 2022/09/19 17:53:41 by dh                #+#    #+#             */
+/*   Updated: 2022/09/19 17:53:42 by dh               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef UTILS_H
-# define UTILS_H
+#include <stdlib.h>
 
-void	swap(int *a, int *b);
-void	ft_sort_int_tab(int *tab, int size);
-int		ft_isspace(char c);
-void	free_strs(char **strs);
-#endif
+void	free_strs(char **strs)
+{
+	int	i;
+
+	if (!strs)
+		return ;
+	i = 0;
+	while (strs[i])
+	{
+		free(strs[i]);
+		i++;
+	}
+	free(strs);
+}

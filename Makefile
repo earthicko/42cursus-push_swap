@@ -13,6 +13,8 @@ SRCNAME_DEBUG	= \
 
 SRCNAME			= \
 				./utils/ft_sort_int_tab \
+				./utils/free_strs \
+				./utils/ft_isspace \
 				./datatypes/stack \
 				./datatypes/deque \
 				./datatypes/deque_methods \
@@ -23,7 +25,6 @@ SRCNAME			= \
 				./datatypes/state_rev_rotate \
 				./parser/parser \
 				./parser/ft_split_space \
-				./parser/parser_utils \
 				./parser/construct_stack \
 				./parser/ft_atoi_if_valid \
 				./sorter/sort_stack_utils \

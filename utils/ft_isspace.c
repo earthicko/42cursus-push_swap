@@ -1,31 +1,14 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parser_utils.c                                     :+:      :+:    :+:   */
+/*   ft_isspace.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: donghyle <donghyle@student.42seoul.kr>     +#+  +:+       +#+        */
+/*   By: dh <marvin@42.fr>                          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/17 03:33:39 by donghyle          #+#    #+#             */
-/*   Updated: 2022/09/17 03:33:40 by donghyle         ###   ########.fr       */
+/*   Created: 2022/09/19 17:53:47 by dh                #+#    #+#             */
+/*   Updated: 2022/09/19 17:53:48 by dh               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdlib.h>
-
-void	free_strs(char **strs)
-{
-	int	i;
-
-	if (!strs)
-		return ;
-	i = 0;
-	while (strs[i])
-	{
-		free(strs[i]);
-		i++;
-	}
-	free(strs);
-}
 
 int	ft_isspace(char c)
 {

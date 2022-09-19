@@ -21,6 +21,4 @@ int		construct_stack(t_deque *stack, t_array *arr);
 
 int		ft_atoi_if_valid(char *str, int *ret);
 char	**ft_split_space(char const *s);
-void	free_strs(char **strs);
-int		ft_isspace(char c);
 #endif
