@@ -101,10 +101,9 @@ int	sort_b_to_a(t_state *state, int depth)
 	int			res;
 	t_chunksize	chunksize;
 
-	if (is_stack_sorted(state->b, SORT_DSC))
-		return (do_n_times(state, pa, depth));
-	if (depth <= 3)
-		return (manual_sort_b_to_a(state, depth));
+	res = is_stack_optimisable(state, state->b, depth);
+	if (res)
+		return (sort_optimally(state, state->b, res, depth));
 	res = analyse_chunk(&chunksize, state->b, depth);
 	if (res < 0)
 		return (res);
