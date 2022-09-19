@@ -17,7 +17,7 @@ int	manual_sort_b_to_a(t_state *state, int depth)
 	if (depth == 0)
 		return (CODE_OK);
 	if (depth == 1)
-		return (pa(state));
+		return (pa(state, 1));
 	if (depth == 2)
 		return (sort_b_2x(state));
 	if (depth == 3 && state->a->size == 3)
@@ -63,18 +63,18 @@ int	dispatch_b_to_a(t_state *state, t_chunksize *chunksize)
 	if (chunk_i == 0)
 	{
 		if (state->b->size > 1)
-			return (rb(state));
+			return (rb(state, 1));
 	}
 	else if (chunk_i == 1)
 	{
-		res = pa(state);
+		res = pa(state, 1);
 		if (res < 0)
 			return (res);
 		if (state->a->size > 1)
-			return (ra(state));
+			return (ra(state, 1));
 	}
 	else if (chunk_i == 2)
-		return (pa(state));
+		return (pa(state, 1));
 	else
 		return (CODE_ERROR_INVALID_VALUE);
 	return (CODE_OK);

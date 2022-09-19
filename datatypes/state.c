@@ -42,7 +42,7 @@ void	state_del(t_state *state)
 	free(state);
 }
 
-int	do_n_times(t_state *state, int f(t_state *), int n)
+int	do_n_times(t_state *state, int f(t_state *, int), int n)
 {
 	int	res;
 	int	i;
@@ -50,7 +50,7 @@ int	do_n_times(t_state *state, int f(t_state *), int n)
 	i = 0;
 	while (i < n)
 	{
-		res = f(state);
+		res = f(state, 1);
 		if (res < 0)
 			return (res);
 		i++;

@@ -17,7 +17,7 @@ int	sort_a_2x(t_state *state)
 	if (state->a->size < 2)
 		return (CODE_ERROR_INVALID_VALUE);
 	if (state->a->head->idx > state->a->head->next->idx)
-		sa(state);
+		sa(state, 1);
 	return (CODE_OK);
 }
 
@@ -26,8 +26,8 @@ int	sort_b_2x(t_state *state)
 	if (state->b->size < 2)
 		return (CODE_ERROR_INVALID_VALUE);
 	if (state->b->head->idx < state->b->head->next->idx)
-		sb(state);
-	pa(state);
-	pa(state);
+		sb(state, 1);
+	pa(state, 1);
+	pa(state, 1);
 	return (CODE_OK);
 }
