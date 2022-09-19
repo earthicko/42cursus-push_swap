@@ -13,7 +13,7 @@
 #ifndef ARRAY_H
 # define ARRAY_H
 # include <stdlib.h>
-# include "consts.h"
+# include "codes.h"
 # include "libft.h"
 
 typedef struct s_array
