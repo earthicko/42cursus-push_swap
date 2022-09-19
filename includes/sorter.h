@@ -20,7 +20,7 @@ int		sort_b_to_a(t_state *state, int depth);
 
 int		analyse_chunk(t_chunksize *chunksize, t_deque *stack, int depth);
 int		dispatch_by_chunk(t_chunksize *chunksize, t_deque *stack);
-int		is_stack_sorted(t_deque *stack, int order);
+int		dispatch_a_to_b_clean(t_state *state, t_chunksize *chunksize);
 
 int		sort_a_2x(t_state *state);
 int		sort_b_2x(t_state *state);

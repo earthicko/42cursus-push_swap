@@ -83,9 +83,14 @@ int	divide_a_to_b(t_state *state, t_chunksize *chunksize, int depth)
 	int	i;
 	int	res;
 
+	if (state->b->size == 0)
+		chunksize->clean = 1;
 	i = 0;
 	while (i < depth)
 	{
+		if (chunksize->clean)
+			res = dispatch_a_to_b_clean(state, chunksize);
+		else
 		res = dispatch_a_to_b(state, chunksize);
 		if (res < 0)
 			return (res);
@@ -109,6 +114,7 @@ int	sort_a_to_b(t_state *state, int depth)
 	res = divide_a_to_b(state, &chunksize, depth);
 	if (res < 0)
 		return (res);
+	if (!chunksize.clean)
 	res = rev_rotate_a_to_b(state, &chunksize);
 	if (res < 0)
 		return (res);
