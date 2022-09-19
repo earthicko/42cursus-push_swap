@@ -48,6 +48,7 @@ void	sort_b_3x_102(t_state *state, int clean)
 		rrb(state, 1);
 		rrb(state, 1);
 		pa(state, 1);
+		pa(state, 1);
 	}
 }
 
