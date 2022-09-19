@@ -18,10 +18,12 @@ int	manual_sort_a_to_b(t_state *state, int depth)
 		return (CODE_OK);
 	if (depth == 2)
 		return (sort_a_2x(state));
-	if (depth == 3 && state->a->size == 3)
-		return (sort_a_3x(state, 1));
-	if (depth == 3 && state->a->size != 3)
+	if (depth == 3)
+	{
+		if (state->a->size == 3 && state->b->size == 0)
+			return (sort_a_3x(state, 1));
 		return (sort_a_3x(state, 0));
+	}
 	return (CODE_ERROR_INVALID_VALUE);
 }
 
