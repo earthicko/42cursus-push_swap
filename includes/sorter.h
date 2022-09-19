@@ -13,6 +13,8 @@
 #ifndef SORTER_H
 # define SORTER_H
 # include "state.h"
+# define SORT_ASC 1
+# define SORT_DSC -1
 # define CODE_STACK_NOT_OPTIMISABLE 0
 # define CODE_STACK_SORTED 1
 # define CODE_STACK_SMALL_ENOUGH 2
@@ -22,6 +24,7 @@ int		sort_b_to_a(t_state *state, int depth);
 
 int		analyse_chunk(t_chunksize *chunksize, t_deque *stack, int depth);
 int		dispatch_by_chunk(t_chunksize *chunksize, t_deque *stack);
+int		is_stack_sorted(t_deque *stack, int order);
 int		is_stack_optimisable(t_state *state, t_deque *stack, int depth);
 int		sort_optimally(t_state *state, t_deque *stack, int code, int depth);
 
