@@ -23,8 +23,9 @@ typedef struct s_state
 
 typedef struct s_chunksize
 {
-	int		div[4];
-	int		size[3];
+	int	clean;
+	int	div[4];
+	int	size[3];
 }	t_chunksize;
 
 t_state	*state_init(void);
