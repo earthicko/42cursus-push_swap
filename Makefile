@@ -7,14 +7,34 @@ INC_DIR_DEBUG	= -I includes_debug
 INC_DIR			= -I . $(INC_DIR_LIBFT) -I includes $(INC_DIR_DEBUG)
 
 SRCNAME_DEBUG	= \
-				./debug/deque_debug ./debug/state_debug
+				./debug/deque_debug \
+				./debug/node_debug \
+				./debug/state_debug
 
 SRCNAME			= \
-				./datatypes/stack ./datatypes/deque ./datatypes/deque_methods ./datatypes/array ./datatypes/state \
-				./datatypes/state_swap_push ./datatypes/state_rotate ./datatypes/state_rev_rotate \
-				./parser/parser ./parser/ft_split_space ./parser/parser_utils ./parser/construct_stack ./parser/ft_atoi_if_valid \
-				./sorter/sort_stack_utils ./sorter/sort_a_to_b ./sorter/sort_b_to_a \
-				./sorter/sort_manual_2x ./sorter/sort_manual_3x ./sorter/sort_manual_a_3x_utils ./sorter/sort_manual_b_3x_utils \
+				./utils/ft_sort_int_tab \
+				./datatypes/stack \
+				./datatypes/deque \
+				./datatypes/deque_methods \
+				./datatypes/array \
+				./datatypes/state \
+				./datatypes/state_swap_push \
+				./datatypes/state_rotate \
+				./datatypes/state_rev_rotate \
+				./parser/parser \
+				./parser/ft_split_space \
+				./parser/parser_utils \
+				./parser/construct_stack \
+				./parser/ft_atoi_if_valid \
+				./sorter/sort_stack_utils \
+				./sorter/sort_a_to_b \
+				./sorter/sort_b_to_a \
+				./sorter/optimisation/sort_optimisation \
+				./sorter/optimisation/sort_optimised_2x \
+				./sorter/optimisation/sort_optimised_3x \
+				./sorter/optimisation/sort_optimised_a_3x_utils \
+				./sorter/optimisation/sort_optimised_b_3x_utils \
+				./sorter/optimisation/sort_optimised_dispatch \
 
 SRC				= $(addsuffix .c, $(SRCNAME))
 OBJ				= $(addsuffix .o, $(SRCNAME))
