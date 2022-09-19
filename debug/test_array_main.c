@@ -1,22 +1,42 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   test_array_main.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: donghyle <donghyle@student.42seoul.kr>     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/09/19 17:28:18 by donghyle          #+#    #+#             */
+/*   Updated: 2022/09/19 17:28:18 by donghyle         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdio.h>
 #include "array.h"
 
-int main()
+void	print_array(t_array *array)
 {
-	t_array *array;
-	
+	int	i;
+
+	printf("array len %d cap %d\n", array->len, array->cap);
+	i = 0;
+	while (i < array->len)
+	{
+		printf("[%d] ", array->data[i]);
+		i++;
+	}
+	printf("\n");
+}
+
+int	main(void)
+{
+	t_array	*array;
+
 	array = array_init(1);
 	array_append(array, 1);
-	printf("array len %d cap %d\n", array->len, array->cap);
-	for(int i=0;i<array->len;i++) printf("[%d] ", array->data[i]);
-	printf("\n");
+	print_array(array);
 	array_append(array, 2);
-	printf("array len %d cap %d\n", array->len, array->cap);
-	for(int i=0;i<array->len;i++) printf("[%d] ", array->data[i]);
-	printf("\n");
+	print_array(array);
 	array_append(array, 3);
-	printf("array len %d cap %d\n", array->len, array->cap);
-	for(int i=0;i<array->len;i++) printf("[%d] ", array->data[i]);
-	printf("\n");
-	return 0;
+	print_array(array);
+	return (0);
 }

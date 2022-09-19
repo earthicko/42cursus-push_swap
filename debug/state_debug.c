@@ -1,5 +1,37 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   state_debug.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: donghyle <donghyle@student.42seoul.kr>     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/09/19 17:28:16 by donghyle          #+#    #+#             */
+/*   Updated: 2022/09/19 17:28:17 by donghyle         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdio.h>
 #include "state_debug.h"
+
+void	print_one_stack_layer(t_state *state, int i_line, t_node *a, t_node *b)
+{
+	if (i_line < state->a->size)
+	{
+		printf("%2d", a->idx);
+		a = a->next;
+	}
+	else
+		printf("  ");
+	printf(" | ");
+	if (i_line < state->b->size)
+	{
+		printf("%2d", b->idx);
+		b = b->next;
+	}
+	else
+		printf("  ");
+	printf("\n");
+}
 
 void	print_state(t_state *state)
 {
@@ -17,22 +49,7 @@ void	print_state(t_state *state)
 	i = 0;
 	while (i < max_len)
 	{
-		if (i < state->a->size)
-		{
-			printf("%2d", a->idx);
-			a = a->next;
-		}
-		else
-			printf("  ");
-		printf(" | ");
-		if (i < state->b->size)
-		{
-			printf("%2d", b->idx);
-			b = b->next;
-		}
-		else
-			printf("  ");
-		printf("\n");
+		print_one_stack_layer(state, i, a, b);
 		i++;
 	}
 	printf("-------\n");
