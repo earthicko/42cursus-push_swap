@@ -13,7 +13,6 @@
 #ifndef SORTER_H
 # define SORTER_H
 # include "state.h"
-# include "consts.h"
 # define CODE_STACK_NOT_OPTIMISABLE 0
 # define CODE_STACK_SORTED 1
 # define CODE_STACK_SMALL_ENOUGH 2

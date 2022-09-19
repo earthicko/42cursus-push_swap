@@ -11,8 +11,8 @@
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include <limits.h>
 #include "parser.h"
+#include "utils.h"
 
 static void	skip_separator(char **start, int inverted)
 {

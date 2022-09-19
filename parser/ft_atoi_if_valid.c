@@ -12,6 +12,7 @@
 
 #include "libft.h"
 #include "parser.h"
+#include "utils.h"
 
 int	is_number(char *str)
 {

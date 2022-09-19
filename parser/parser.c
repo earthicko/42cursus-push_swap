@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "parser.h"
+#include "utils.h"
 
 int	append_to_array_if_valid(t_array *arr, char *arg_split)
 {
