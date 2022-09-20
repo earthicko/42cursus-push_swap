@@ -12,6 +12,7 @@
 
 #include "parser.h"
 #include "utils.h"
+#include "datatype_conversion.h"
 
 int	append_to_array_if_valid(t_array *arr, char *arg_split)
 {
@@ -93,7 +94,7 @@ int	parse_stack(t_state *state, int argc, char **argv)
 	arr = parse_args(argc, argv);
 	if (!arr)
 		return (CODE_ERROR_MALLOC);
-	res = construct_stack(state->a, arr);
+	res = stack_init_from_array(state->a, arr);
 	array_del(arr);
 	return (res);
 }

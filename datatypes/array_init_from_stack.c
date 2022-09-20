@@ -1,23 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parser.h                                           :+:      :+:    :+:   */
+/*   array_init_from_stack.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: donghyle <donghyle@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/17 03:33:13 by donghyle          #+#    #+#             */
-/*   Updated: 2022/09/17 03:33:13 by donghyle         ###   ########.fr       */
+/*   Created: 2022/09/20 16:50:47 by donghyle          #+#    #+#             */
+/*   Updated: 2022/09/20 16:50:49 by donghyle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PARSER_H
-# define PARSER_H
-# include "array.h"
-# include "state.h"
+#include "datatype_conversion.h"
 
-int		parse_stack(t_state *state, int argc, char **argv);
-t_array	*parse_args(int argc, char **argv);
+t_array	*array_init_from_stack(t_deque *stack, int depth)
+{
+	t_array	*init;
+	t_node	*node;
 
-int		ft_atoi_if_valid(char *str, int *ret);
-char	**ft_split_space(char const *s);
-#endif
+	if (depth > stack->size)
+		return (NULL);
+	init = array_init(depth);
+	if (!init)
+		return (NULL);
+	node = stack->head;
+	while (depth--)
+	{
+		array_append(init, node->idx);
+		node = node->next;
+	}
+	return (init);
+}

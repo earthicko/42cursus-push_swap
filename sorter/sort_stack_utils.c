@@ -15,25 +15,6 @@
 #include "array.h"
 #include "utils.h"
 
-t_array	*array_init_from_stack(t_deque *stack, int depth)
-{
-	t_array	*init;
-	t_node	*node;
-
-	if (depth > stack->size)
-		return (NULL);
-	init = array_init(depth);
-	if (!init)
-		return (NULL);
-	node = stack->head;
-	while (depth--)
-	{
-		array_append(init, node->idx);
-		node = node->next;
-	}
-	return (init);
-}
-
 int	analyse_chunk(t_chunksize *size, t_deque *stack, int depth)
 {
 	t_array	*sorted_idx;

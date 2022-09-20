@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   construct_stack.c                                  :+:      :+:    :+:   */
+/*   stack_init_from_array.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: donghyle <donghyle@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "parser.h"
+#include "datatype_conversion.h"
 
-int	construct_stack(t_deque *stack, t_array *arr)
+int	stack_init_from_array(t_deque *stack, t_array *arr)
 {
 	t_node	*node;
 	int		i;
