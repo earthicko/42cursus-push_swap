@@ -88,7 +88,7 @@ static t_array	*parse_args(int argc, char **argv)
 
 t_state	*parse_stack(int argc, char **argv)
 {
-	t_state *state;
+	t_state	*state;
 	t_array	*arr;
 
 	arr = parse_args(argc, argv);
