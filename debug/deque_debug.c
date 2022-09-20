@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "deque_debug.h"
 
 void	print_deque_node_line(t_deque *this, void f_print(t_node *))

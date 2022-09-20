@@ -12,6 +12,7 @@
 
 #ifndef DEQUE_DEBUG_H
 # define DEQUE_DEBUG_H
+# include <stdio.h>
 # include "deque.h"
 
 void	print_node(t_node *node);

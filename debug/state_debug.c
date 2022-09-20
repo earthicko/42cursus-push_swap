@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "state_debug.h"
 
 void	print_one_stack_layer(t_state *state, int i_line, t_node **a, t_node **b)
