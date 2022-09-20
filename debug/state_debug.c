@@ -12,7 +12,7 @@
 
 #include "state_debug.h"
 
-void	print_one_stack_layer(t_state *state, int i_line, t_node **a, t_node **b)
+void	print_stack_layer(t_state *state, int i_line, t_node **a, t_node **b)
 {
 	if (i_line < state->a->size)
 	{
@@ -49,7 +49,7 @@ void	print_state(t_state *state)
 	i = 0;
 	while (i < max_len)
 	{
-		print_one_stack_layer(state, i, &a, &b);
+		print_stack_layer(state, i, &a, &b);
 		i++;
 	}
 	printf("-------\n");
