@@ -63,7 +63,7 @@ int	append_arg_to_array(t_array *arr, char *arg)
 	return (res);
 }
 
-t_array	*parse_args(int argc, char **argv)
+static t_array	*parse_args(int argc, char **argv)
 {
 	t_array	*ints;
 	int		i;

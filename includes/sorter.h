@@ -30,9 +30,6 @@ int		sort_optimally(t_state *state, t_deque *stack, int code, int depth);
 
 int		dispatch_a_to_b_clean(t_state *state, t_chunksize *chunksize);
 
-int		manual_sort_a_to_b(t_state *state, int depth);
-int		manual_sort_b_to_a(t_state *state, int depth);
-
 int		sort_a_2x(t_state *state);
 int		sort_b_2x(t_state *state);
 

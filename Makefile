@@ -36,8 +36,7 @@ SRCNAME			= \
 				./sorter/optimisation/sort_optimised_2x \
 				./sorter/optimisation/sort_optimised_3x \
 				./sorter/optimisation/sort_optimised_a_3x_utils \
-				./sorter/optimisation/sort_optimised_b_3x_utils \
-				./sorter/optimisation/sort_optimised_dispatch
+				./sorter/optimisation/sort_optimised_b_3x_utils
 
 SRCNAME_BONUS	= \
 				./utils/ft_sort_int_tab \

@@ -14,7 +14,7 @@
 #include "parser.h"
 #include "utils.h"
 
-int	is_number(char *str)
+static int	is_number(char *str)
 {
 	char	*cursor;
 
@@ -32,10 +32,8 @@ int	is_number(char *str)
 	return (1);
 }
 
-void	init_ft_atoi_strict(int *nbr, int *nbr_prev, char **cursor, int *sign)
+static void	init_ft_atoi_strict(char **cursor, int *sign)
 {
-	*nbr = 0;
-	*nbr_prev = 0;
 	while (**cursor != '\0' && ft_isspace(**cursor))
 		(*cursor)++;
 	*sign = 1;
@@ -47,15 +45,17 @@ void	init_ft_atoi_strict(int *nbr, int *nbr_prev, char **cursor, int *sign)
 	}
 }
 
-int	ft_atoi_strict(const char *str, int *ret)
+static int	ft_atoi_strict(const char *str, int *ret)
 {
 	char	*cursor;
 	int		nbr;
 	int		nbr_prev;
 	int		sign;
 
+	nbr = 0;
+	nbr_prev = 0;
 	cursor = (char *) str;
-	init_ft_atoi_strict(&nbr, &nbr_prev, &cursor, &sign);
+	init_ft_atoi_strict(&cursor, &sign);
 	while (*cursor != '\0' && ft_isdigit(*cursor))
 	{
 		nbr = nbr_prev * 10 + sign * ((int)(*cursor - '0'));

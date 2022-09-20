@@ -12,22 +12,7 @@
 
 #include "sorter.h"
 
-int	manual_sort_a_to_b(t_state *state, int depth)
-{
-	if (depth <= 1)
-		return (CODE_OK);
-	if (depth == 2)
-		return (sort_a_2x(state));
-	if (depth == 3)
-	{
-		if (state->a->size == 3 && state->b->size == 0)
-			return (sort_a_3x(state, 1));
-		return (sort_a_3x(state, 0));
-	}
-	return (CODE_ERROR_INVALID_VALUE);
-}
-
-int	rev_rotate_a_to_b(t_state *state, t_chunksize *chunksize)
+static int	rev_rotate_a_to_b(t_state *state, t_chunksize *chunksize)
 {
 	int	n_rra;
 	int	n_rrb;
@@ -54,7 +39,7 @@ int	rev_rotate_a_to_b(t_state *state, t_chunksize *chunksize)
 	return (res);
 }
 
-int	dispatch_a_to_b(t_state *state, t_chunksize *chunksize)
+static int	dispatch_a_to_b(t_state *state, t_chunksize *chunksize)
 {
 	int	res;
 	int	chunk_i;
@@ -80,7 +65,7 @@ int	dispatch_a_to_b(t_state *state, t_chunksize *chunksize)
 	return (CODE_OK);
 }
 
-int	divide_a_to_b(t_state *state, t_chunksize *chunksize, int depth)
+static int	divide_a_to_b(t_state *state, t_chunksize *chunksize, int depth)
 {
 	int	i;
 	int	res;

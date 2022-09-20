@@ -16,7 +16,6 @@
 # include "state.h"
 
 t_state	*parse_stack(int argc, char **argv);
-t_array	*parse_args(int argc, char **argv);
 
 int		ft_atoi_if_valid(char *str, int *ret);
 char	**ft_split_space(char const *s);
