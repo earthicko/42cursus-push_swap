@@ -92,18 +92,11 @@ int	main(int argc, char **argv)
 
 	if (argc <= 1)
 		return (CODE_OK);
-	state = state_init();
+	state = parse_stack(argc, argv);
 	if (!state)
 	{
 		ft_putendl_fd(STR_ERROR, STDERR_FILENO);
-		return (CODE_ERROR_MALLOC);
-	}
-	res = parse_stack(state, argc, argv);
-	if (res < 0)
-	{
-		state_del(state);
-		ft_putendl_fd(STR_ERROR, STDERR_FILENO);
-		return (res);
+		return (CODE_ERROR_GENERIC);
 	}
 	res = verify_operations(state);
 	if (res < 0)

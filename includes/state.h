@@ -14,6 +14,7 @@
 # define STATE_H
 # include "codes.h"
 # include "deque.h"
+# include "array.h"
 
 typedef struct s_state
 {
@@ -28,7 +29,7 @@ typedef struct s_chunksize
 	int	size[3];
 }	t_chunksize;
 
-t_state	*state_init(void);
+t_state	*state_init(t_array *arr);
 void	state_del(t_state *state);
 int		do_n_times(t_state *state, int f(t_state *, int), int n, int echo);
 

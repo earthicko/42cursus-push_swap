@@ -11,15 +11,16 @@
 /* ************************************************************************** */
 
 #include "state.h"
+#include "datatype_conversion.h"
 
-t_state	*state_init(void)
+t_state	*state_init(t_array *arr)
 {
 	t_state	*init;
 
 	init = (t_state *)malloc(sizeof(t_state));
 	if (!init)
 		return (NULL);
-	init->a = deque_init();
+	init->a = stack_init_from_array(arr);
 	if (!init->a)
 	{
 		free(init);
