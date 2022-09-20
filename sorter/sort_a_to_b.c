@@ -44,13 +44,13 @@ int	rev_rotate_a_to_b(t_state *state, t_chunksize *chunksize)
 		n_rrr = n_rra;
 	else
 		n_rrr = n_rrb;
-	res = do_n_times(state, rrr, n_rrr);
+	res = do_n_times(state, rrr, n_rrr, 1);
 	if (res < 0)
 		return (res);
-	res = do_n_times(state, rrb, n_rrb - n_rrr);
+	res = do_n_times(state, rrb, n_rrb - n_rrr, 1);
 	if (res < 0)
 		return (res);
-	res = do_n_times(state, rra, n_rra - n_rrr);
+	res = do_n_times(state, rra, n_rra - n_rrr, 1);
 	return (res);
 }
 

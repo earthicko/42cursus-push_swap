@@ -30,7 +30,7 @@ typedef struct s_chunksize
 
 t_state	*state_init(void);
 void	state_del(t_state *state);
-int		do_n_times(t_state *state, int f(t_state *, int), int n);
+int		do_n_times(t_state *state, int f(t_state *, int), int n, int echo);
 
 int		sa(t_state *state, int echo);
 int		sb(t_state *state, int echo);

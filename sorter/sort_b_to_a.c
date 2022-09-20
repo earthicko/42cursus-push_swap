@@ -46,13 +46,13 @@ int	rev_rotate_b_to_a(t_state *state, t_chunksize *chunksize)
 		n_rrr = n_rra;
 	else
 		n_rrr = n_rrb;
-	res = do_n_times(state, rrr, n_rrr);
+	res = do_n_times(state, rrr, n_rrr, 1);
 	if (res < 0)
 		return (res);
-	res = do_n_times(state, rra, n_rra - n_rrr);
+	res = do_n_times(state, rra, n_rra - n_rrr, 1);
 	if (res < 0)
 		return (res);
-	res = do_n_times(state, rrb, n_rrb - n_rrr);
+	res = do_n_times(state, rrb, n_rrb - n_rrr, 1);
 	return (res);
 }
 
@@ -121,7 +121,7 @@ int	sort_b_to_a(t_state *state, int depth)
 	res = sort_a_to_b(state, chunksize.size[1]);
 	if (res < 0)
 		return (res);
-	res = do_n_times(state, pa, chunksize.size[0]);
+	res = do_n_times(state, pa, chunksize.size[0], 1);
 	if (res < 0)
 		return (res);
 	return (sort_a_to_b(state, chunksize.size[0]));

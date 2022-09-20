@@ -69,7 +69,7 @@ int	sort_optimally(t_state *state, t_deque *stack, int code, int depth)
 	else if (state->b == stack)
 	{
 		if (code == CODE_STACK_SORTED)
-			return (do_n_times(state, pa, depth));
+			return (do_n_times(state, pa, depth, 1));
 		else if (code == CODE_STACK_SMALL_ENOUGH)
 			return (manual_sort_b_to_a(state, depth));
 	}
