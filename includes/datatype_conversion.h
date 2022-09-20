@@ -16,5 +16,5 @@
 # include "deque.h"
 
 t_array	*array_init_from_stack(t_deque *stack, int depth);
-int		stack_init_from_array(t_deque *stack, t_array *arr);
+t_deque	*stack_init_from_array(t_array *arr);
 #endif
