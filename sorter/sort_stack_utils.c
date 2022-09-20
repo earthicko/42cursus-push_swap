@@ -38,7 +38,7 @@ int	analyse_chunk(t_chunksize *size, t_deque *stack, int depth)
 {
 	t_array	*sorted_idx;
 
-	ft_memset(size->size, 0, sizeof(size->size));
+	ft_memset(size, 0, sizeof(*size));
 	sorted_idx = array_init_from_stack(stack, depth);
 	if (!sorted_idx)
 		return (CODE_ERROR_MALLOC);
