@@ -47,7 +47,9 @@ int	sort_b_3x(t_state *state, int clean)
 	head[0] = state->b->head->idx;
 	head[1] = state->b->head->next->idx;
 	head[2] = state->b->head->next->next->idx;
-	if (head[0] < head[2] && head[2] < head[1])
+	if (head[0] < head[1] && head[1] < head[2])
+		sort_b_3x_012(state, clean);
+	else if (head[0] < head[2] && head[2] < head[1])
 		sort_b_3x_021(state, clean);
 	else if (head[1] < head[0] && head[0] < head[2])
 		sort_b_3x_102(state, clean);
@@ -56,6 +58,6 @@ int	sort_b_3x(t_state *state, int clean)
 	else if (head[1] < head[2] && head[2] < head[0])
 		sort_b_3x_201(state, clean);
 	else if (head[2] < head[1] && head[1] < head[0])
-		sort_b_3x_210(state, clean);
+		do_n_times(state, pa, 3, 1);
 	return (CODE_OK);
 }

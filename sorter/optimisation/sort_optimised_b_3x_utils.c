@@ -88,18 +88,22 @@ void	sort_b_3x_201(t_state *state, int clean)
 	}
 }
 
-void	sort_b_3x_210(t_state *state, int clean)
+void	sort_b_3x_012(t_state *state, int clean)
 {
 	if (clean)
 	{
-		pa(state, 1);
-		pa(state, 1);
+		rb(state, 1);
+		sb(state, 1);
 		pa(state, 1);
 	}
 	else
 	{
+		rb(state, 1);
+		rb(state, 1);
 		pa(state, 1);
+		rrb(state, 1);
 		pa(state, 1);
+		rrb(state, 1);
 		pa(state, 1);
 	}
 }

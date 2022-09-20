@@ -43,9 +43,9 @@ void	sort_a_3x_120(t_state *state, int clean);
 void	sort_a_3x_201(t_state *state, int clean);
 void	sort_a_3x_210(t_state *state, int clean);
 int		sort_b_3x(t_state *state, int clean);
+void	sort_b_3x_012(t_state *state, int clean);
 void	sort_b_3x_021(t_state *state, int clean);
 void	sort_b_3x_102(t_state *state, int clean);
 void	sort_b_3x_120(t_state *state, int clean);
 void	sort_b_3x_201(t_state *state, int clean);
-void	sort_b_3x_210(t_state *state, int clean);
 #endif
