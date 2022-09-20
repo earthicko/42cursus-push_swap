@@ -24,11 +24,10 @@ SRCNAME			= \
 				./datatypes/state_swap_push \
 				./datatypes/state_rotate \
 				./datatypes/state_rev_rotate \
-				./get_next_line/get_next_line \
-				./get_next_line/get_next_line_utils \
+				./datatypes/stack_init_from_array \
+				./datatypes/array_init_from_stack \
 				./parser/parser \
 				./parser/ft_split_space \
-				./parser/construct_stack \
 				./parser/ft_atoi_if_valid \
 				./sorter/sort_stack_utils \
 				./sorter/sort_a_to_b \
@@ -52,21 +51,14 @@ SRCNAME_BONUS	= \
 				./datatypes/state_swap_push \
 				./datatypes/state_rotate \
 				./datatypes/state_rev_rotate \
+				./datatypes/stack_init_from_array \
+				./datatypes/array_init_from_stack \
 				./get_next_line/get_next_line \
 				./get_next_line/get_next_line_utils \
 				./parser/parser \
 				./parser/ft_split_space \
-				./parser/construct_stack \
 				./parser/ft_atoi_if_valid \
-				./sorter/sort_stack_utils \
-				./sorter/sort_a_to_b \
-				./sorter/sort_b_to_a \
-				./sorter/optimisation/sort_optimisation \
-				./sorter/optimisation/sort_optimised_2x \
-				./sorter/optimisation/sort_optimised_3x \
-				./sorter/optimisation/sort_optimised_a_3x_utils \
-				./sorter/optimisation/sort_optimised_b_3x_utils \
-				./sorter/optimisation/sort_optimised_dispatch
+				./sorter/sort_stack_utils 
 
 SRC				= $(addsuffix .c, $(SRCNAME))
 OBJ				= $(addsuffix .o, $(SRCNAME))
@@ -108,7 +100,7 @@ clean_test :
 	$(RM) debug/test_deque_main.o debug/test_array_main.o debug/test_parser_main.o
 
 clean : clean_test
-	$(RM) $(OBJ) $(OBJ_DEBUG) $(NAME).o $(BONUS).o
+	$(RM) $(OBJ) $(OBJ_DEBUG) $(OBJ_BONUS) $(NAME).o $(BONUS).o
 	make clean -C $(LIBFT_DIR)
 
 fclean_test :
