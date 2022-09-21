@@ -20,17 +20,13 @@ t_state	*state_init(t_array *arr)
 	init = (t_state *)malloc(sizeof(t_state));
 	if (!init)
 		return (NULL);
+	ft_memset(init, 0, sizeof(t_state));
 	init->a = stack_init_from_array(arr);
-	if (!init->a)
-	{
-		free(init);
-		return (NULL);
-	}
 	init->b = deque_init();
-	if (!init->b)
+	init->print_queue = deque_init();
+	if (!init->a || !init->b || !init->print_queue)
 	{
-		deque_del(init->a);
-		free(init);
+		state_del(init);
 		return (NULL);
 	}
 	return (init);
@@ -38,8 +34,12 @@ t_state	*state_init(t_array *arr)
 
 void	state_del(t_state *state)
 {
-	deque_del(state->a);
-	deque_del(state->b);
+	if (state->a)
+		deque_del(state->a);
+	if (state->b)
+		deque_del(state->b);
+	if (state->print_queue)
+		deque_del(state->print_queue);
 	free(state);
 }
 
@@ -51,7 +51,7 @@ int	do_n_times(t_state *state, int f(t_state *, int), int n, int echo)
 	i = 0;
 	while (i < n)
 	{
-		res = f(state, echo);
+		res = f(state);
 		if (res < 0)
 			return (res);
 		i++;
