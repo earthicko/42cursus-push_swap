@@ -17,15 +17,21 @@
 
 int	sa(t_state *state)
 {
-	if (echo)
-		ft_putendl_fd("sa", STDOUT_FILENO);
+	int	res;
+
+	res = deque_push_tail_idx(state->print_queue, SA);
+	if (res < 0)
+		return (res);
 	return (stack_swap(state->a));
 }
 
 int	sb(t_state *state)
 {
-	if (echo)
-		ft_putendl_fd("sb", STDOUT_FILENO);
+	int	res;
+
+	res = deque_push_tail_idx(state->print_queue, SB);
+	if (res < 0)
+		return (res);
 	return (stack_swap(state->b));
 }
 
@@ -33,8 +39,9 @@ int	ss(t_state *state)
 {
 	int	res[2];
 
-	if (echo)
-		ft_putendl_fd("ss", STDOUT_FILENO);
+	res[0] = deque_push_tail_idx(state->print_queue, SS);
+	if (res[0] < 0)
+		return (res[0]);
 	res[0] = stack_swap(state->a);
 	res[1] = stack_swap(state->b);
 	if (res[0] == CODE_OK && res[1] == CODE_OK)
@@ -44,14 +51,20 @@ int	ss(t_state *state)
 
 int	pa(t_state *state)
 {
-	if (echo)
-		ft_putendl_fd("pa", STDOUT_FILENO);
+	int	res;
+
+	res = deque_push_tail_idx(state->print_queue, PA);
+	if (res < 0)
+		return (res);
 	return (stack_push(state->b, state->a));
 }
 
 int	pb(t_state *state)
 {
-	if (echo)
-		ft_putendl_fd("pb", STDOUT_FILENO);
+	int	res;
+
+	res = deque_push_tail_idx(state->print_queue, PB);
+	if (res < 0)
+		return (res);
 	return (stack_push(state->a, state->b));
 }

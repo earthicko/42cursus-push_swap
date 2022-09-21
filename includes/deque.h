@@ -13,6 +13,7 @@
 #ifndef DEQUE_H
 # define DEQUE_H
 # include <stdlib.h>
+# include "codes.h"
 
 typedef struct s_node
 {
@@ -33,6 +34,7 @@ t_deque	*deque_init(void);
 void	deque_del(t_deque *deque);
 void	deque_push_head(t_deque *deque, t_node *node);
 void	deque_push_tail(t_deque *deque, t_node *node);
+int		deque_push_tail_idx(t_deque *this, int idx);
 t_node	*deque_pop_head(t_deque *deque);
 t_node	*deque_pop_tail(t_deque *deque);
 

@@ -42,6 +42,17 @@ void	deque_push_tail(t_deque *this, t_node *node)
 	this->size++;
 }
 
+int	deque_push_tail_idx(t_deque *this, int idx)
+{
+	t_node	*node;
+
+	node = node_init(idx);
+	if (!node)
+		return (CODE_ERROR_MALLOC);
+	deque_push_tail(this, node);
+	return (CODE_OK);
+}
+
 t_node	*deque_pop_head(t_deque *this)
 {
 	t_node	*head;

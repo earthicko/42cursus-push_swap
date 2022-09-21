@@ -17,15 +17,21 @@
 
 int	ra(t_state *state)
 {
-	if (echo)
-		ft_putendl_fd("ra", STDOUT_FILENO);
+	int	res;
+
+	res = deque_push_tail_idx(state->print_queue, RA);
+	if (res < 0)
+		return (res);
 	return (stack_rotate(state->a));
 }
 
 int	rb(t_state *state)
 {
-	if (echo)
-		ft_putendl_fd("rb", STDOUT_FILENO);
+	int	res;
+
+	res = deque_push_tail_idx(state->print_queue, RB);
+	if (res < 0)
+		return (res);
 	return (stack_rotate(state->b));
 }
 
@@ -33,8 +39,9 @@ int	rr(t_state *state)
 {
 	int	res[2];
 
-	if (echo)
-		ft_putendl_fd("rr", STDOUT_FILENO);
+	res[0] = deque_push_tail_idx(state->print_queue, RR);
+	if (res[0] < 0)
+		return (res[0]);
 	res[0] = stack_rotate(state->a);
 	res[1] = stack_rotate(state->b);
 	if (res[0] == CODE_OK && res[1] == CODE_OK)

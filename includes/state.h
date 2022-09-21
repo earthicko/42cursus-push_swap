@@ -16,10 +16,27 @@
 # include "deque.h"
 # include "array.h"
 
+enum e_op
+{
+	SA = 0,
+	SB,
+	SS,
+	PA,
+	PB,
+	RA,
+	RB,
+	RR,
+	RRA,
+	RRB,
+	RRR,
+	NONE
+};
+
 typedef struct s_state
 {
 	t_deque	*a;
 	t_deque	*b;
+	t_deque	*print_queue;
 }	t_state;
 
 typedef struct s_chunksize
