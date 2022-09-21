@@ -24,6 +24,7 @@ SRCNAME			= \
 				./datatypes/state_swap_push \
 				./datatypes/state_rotate \
 				./datatypes/state_rev_rotate \
+				./datatypes/state_print \
 				./datatypes/stack_init_from_array \
 				./datatypes/array_init_from_stack \
 				./parser/parser \
