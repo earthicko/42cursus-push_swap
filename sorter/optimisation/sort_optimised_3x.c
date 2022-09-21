@@ -58,6 +58,6 @@ int	sort_b_3x(t_state *state, int clean)
 	else if (head[1] < head[2] && head[2] < head[0])
 		sort_b_3x_201(state, clean);
 	else if (head[2] < head[1] && head[1] < head[0])
-		do_n_times(state, pa, 3, 1);
+		do_n_times(state, pa, 3);
 	return (CODE_OK);
 }

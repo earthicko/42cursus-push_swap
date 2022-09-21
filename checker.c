@@ -18,15 +18,15 @@
 int	parse_and_execute_swap_push(t_state *state, char *line)
 {
 	if (ft_strncmp(line, "sa\n", 3) == 0)
-		sa(state, 0);
+		sa(state);
 	else if (ft_strncmp(line, "sb\n", 3) == 0)
-		sb(state, 0);
+		sb(state);
 	else if (ft_strncmp(line, "ss\n", 3) == 0)
-		ss(state, 0);
+		ss(state);
 	else if (ft_strncmp(line, "pa\n", 3) == 0)
-		pa(state, 0);
+		pa(state);
 	else if (ft_strncmp(line, "pb\n", 3) == 0)
-		pb(state, 0);
+		pb(state);
 	else
 		return (CODE_ERROR_INVALID_VALUE);
 	return (CODE_OK);
@@ -35,17 +35,17 @@ int	parse_and_execute_swap_push(t_state *state, char *line)
 int	parse_and_execute_rotate(t_state *state, char *line)
 {
 	if (ft_strncmp(line, "ra\n", 3) == 0)
-		ra(state, 0);
+		ra(state);
 	else if (ft_strncmp(line, "rb\n", 3) == 0)
-		rb(state, 0);
+		rb(state);
 	else if (ft_strncmp(line, "rr\n", 3) == 0)
-		rr(state, 0);
+		rr(state);
 	else if (ft_strncmp(line, "rra\n", 4) == 0)
-		rra(state, 0);
+		rra(state);
 	else if (ft_strncmp(line, "rrb\n", 4) == 0)
-		rrb(state, 0);
+		rrb(state);
 	else if (ft_strncmp(line, "rrr\n", 4) == 0)
-		rrr(state, 0);
+		rrr(state);
 	else
 		return (CODE_ERROR_INVALID_VALUE);
 	return (CODE_OK);

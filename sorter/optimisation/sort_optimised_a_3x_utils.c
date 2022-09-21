@@ -16,14 +16,14 @@ void	sort_a_3x_021(t_state *state, int clean)
 {
 	if (clean)
 	{
-		rra(state, 1);
-		sa(state, 1);
+		rra(state);
+		sa(state);
 	}
 	else
 	{
-		ra(state, 1);
-		sa(state, 1);
-		rra(state, 1);
+		ra(state);
+		sa(state);
+		rra(state);
 	}
 }
 
@@ -31,11 +31,11 @@ void	sort_a_3x_102(t_state *state, int clean)
 {
 	if (clean)
 	{
-		sa(state, 1);
+		sa(state);
 	}
 	else
 	{
-		sa(state, 1);
+		sa(state);
 	}
 }
 
@@ -43,14 +43,14 @@ void	sort_a_3x_120(t_state *state, int clean)
 {
 	if (clean)
 	{
-		rra(state, 1);
+		rra(state);
 	}
 	else
 	{
-		ra(state, 1);
-		sa(state, 1);
-		rra(state, 1);
-		sa(state, 1);
+		ra(state);
+		sa(state);
+		rra(state);
+		sa(state);
 	}
 }
 
@@ -58,16 +58,16 @@ void	sort_a_3x_201(t_state *state, int clean)
 {
 	if (clean)
 	{
-		ra(state, 1);
+		ra(state);
 	}
 	else
 	{
-		ra(state, 1);
-		pb(state, 1);
-		pb(state, 1);
-		rra(state, 1);
-		pa(state, 1);
-		pa(state, 1);
+		ra(state);
+		pb(state);
+		pb(state);
+		rra(state);
+		pa(state);
+		pa(state);
 	}
 }
 
@@ -75,17 +75,17 @@ void	sort_a_3x_210(t_state *state, int clean)
 {
 	if (clean)
 	{
-		sa(state, 1);
-		rra(state, 1);
+		sa(state);
+		rra(state);
 	}
 	else
 	{
-		ra(state, 1);
-		pb(state, 1);
-		pb(state, 1);
-		rra(state, 1);
-		pa(state, 1);
-		pa(state, 1);
-		sa(state, 1);
+		ra(state);
+		pb(state);
+		pb(state);
+		rra(state);
+		pa(state);
+		pa(state);
+		sa(state);
 	}
 }

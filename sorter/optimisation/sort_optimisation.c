@@ -32,7 +32,7 @@ static int	manual_sort_b_to_a(t_state *state, int depth)
 	if (depth == 0)
 		return (CODE_OK);
 	if (depth == 1)
-		return (pa(state, 1));
+		return (pa(state));
 	if (depth == 2)
 		return (sort_b_2x(state));
 	if (depth == 3)
@@ -52,18 +52,18 @@ int	dispatch_a_to_b_clean(t_state *state, t_chunksize *chunksize)
 	chunk_i = dispatch_by_chunk(chunksize, state->a);
 	if (chunk_i == 0)
 	{
-		res = pb(state, 1);
+		res = pb(state);
 		if (res < 0)
 			return (res);
 		if (state->b->size > 1)
-			return (rb(state, 1));
+			return (rb(state));
 	}
 	else if (chunk_i == 1)
-		return (pb(state, 1));
+		return (pb(state));
 	else if (chunk_i == 2)
 	{
 		if (state->a->size > 1)
-			return (ra(state, 1));
+			return (ra(state));
 	}
 	else
 		return (CODE_ERROR_INVALID_VALUE);
@@ -104,7 +104,7 @@ int	sort_optimally(t_state *state, t_deque *stack, int code, int depth)
 	else if (state->b == stack)
 	{
 		if (code == CODE_STACK_SORTED)
-			return (do_n_times(state, pa, depth, 1));
+			return (do_n_times(state, pa, depth));
 		else if (code == CODE_STACK_SMALL_ENOUGH)
 			return (manual_sort_b_to_a(state, depth));
 	}

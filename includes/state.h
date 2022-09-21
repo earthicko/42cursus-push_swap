@@ -31,17 +31,17 @@ typedef struct s_chunksize
 
 t_state	*state_init(t_array *arr);
 void	state_del(t_state *state);
-int		do_n_times(t_state *state, int f(t_state *, int), int n, int echo);
+int		do_n_times(t_state *state, int f(t_state *), int n);
 
-int		sa(t_state *state, int echo);
-int		sb(t_state *state, int echo);
-int		ss(t_state *state, int echo);
-int		pa(t_state *state, int echo);
-int		pb(t_state *state, int echo);
-int		ra(t_state *state, int echo);
-int		rb(t_state *state, int echo);
-int		rr(t_state *state, int echo);
-int		rra(t_state *state, int echo);
-int		rrb(t_state *state, int echo);
-int		rrr(t_state *state, int echo);
+int		sa(t_state *state);
+int		sb(t_state *state);
+int		ss(t_state *state);
+int		pa(t_state *state);
+int		pb(t_state *state);
+int		ra(t_state *state);
+int		rb(t_state *state);
+int		rr(t_state *state);
+int		rra(t_state *state);
+int		rrb(t_state *state);
+int		rrr(t_state *state);
 #endif

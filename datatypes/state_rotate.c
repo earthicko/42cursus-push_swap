@@ -15,21 +15,21 @@
 #include "stack.h"
 #include "libft.h"
 
-int	ra(t_state *state, int echo)
+int	ra(t_state *state)
 {
 	if (echo)
 		ft_putendl_fd("ra", STDOUT_FILENO);
 	return (stack_rotate(state->a));
 }
 
-int	rb(t_state *state, int echo)
+int	rb(t_state *state)
 {
 	if (echo)
 		ft_putendl_fd("rb", STDOUT_FILENO);
 	return (stack_rotate(state->b));
 }
 
-int	rr(t_state *state, int echo)
+int	rr(t_state *state)
 {
 	int	res[2];
 

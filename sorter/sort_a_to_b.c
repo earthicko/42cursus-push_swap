@@ -29,13 +29,13 @@ static int	rev_rotate_a_to_b(t_state *state, t_chunksize *chunksize)
 		n_rrr = n_rra;
 	else
 		n_rrr = n_rrb;
-	res = do_n_times(state, rrr, n_rrr, 1);
+	res = do_n_times(state, rrr, n_rrr);
 	if (res < 0)
 		return (res);
-	res = do_n_times(state, rrb, n_rrb - n_rrr, 1);
+	res = do_n_times(state, rrb, n_rrb - n_rrr);
 	if (res < 0)
 		return (res);
-	res = do_n_times(state, rra, n_rra - n_rrr, 1);
+	res = do_n_times(state, rra, n_rra - n_rrr);
 	return (res);
 }
 
@@ -46,19 +46,19 @@ static int	dispatch_a_to_b(t_state *state, t_chunksize *chunksize)
 
 	chunk_i = dispatch_by_chunk(chunksize, state->a);
 	if (chunk_i == 0)
-		return (pb(state, 1));
+		return (pb(state));
 	else if (chunk_i == 1)
 	{
-		res = pb(state, 1);
+		res = pb(state);
 		if (res < 0)
 			return (res);
 		if (state->b->size > 1)
-			return (rb(state, 1));
+			return (rb(state));
 	}
 	else if (chunk_i == 2)
 	{
 		if (state->a->size > 1)
-			return (ra(state, 1));
+			return (ra(state));
 	}
 	else
 		return (CODE_ERROR_INVALID_VALUE);
