@@ -43,7 +43,47 @@ void	state_del(t_state *state)
 	free(state);
 }
 
-int	do_n_times(t_state *state, int f(t_state *, int), int n, int echo)
+static void	merge_operations_if_possible(t_node *node)
+{
+	t_node	*next;
+	int		i;
+	int		j;
+
+	next = node->next;
+	if (!next)
+		return ;
+	i = node->idx;
+	j = next->idx;
+	if ((i == SA && j == SB) || (i == SB && j == SA))
+	{
+		node->idx = SS;
+		next->idx = NONE;
+	}
+	else if ((i == RA && j == RB) || (i == RB && j == RA))
+	{
+		node->idx = RR;
+		next->idx = NONE;
+	}
+	else if ((i == RRA && j == RRB) || (i == RRB && j == RRA))
+	{
+		node->idx = RRR;
+		next->idx = NONE;
+	}
+}
+
+void	merge_operations(t_state *state)
+{
+	t_node	*node;
+
+	node = state->print_queue->head;
+	while (node)
+	{
+		merge_operations_if_possible(node);
+		node = node->next;
+	}
+}
+
+int	do_n_times(t_state *state, int f(t_state *), int n)
 {
 	int	res;
 	int	i;

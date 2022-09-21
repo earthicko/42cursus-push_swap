@@ -27,7 +27,13 @@ int	main(int argc, char **argv)
 	}
 	res = sort_a_to_b(state, state->a->size);
 	if (res < 0)
+	{
 		ft_putendl_fd(STR_ERROR, STDERR_FILENO);
+		state_del(state);
+		return (res);
+	}
+	merge_operations(state);
+	state_print_op_queue(state);
 	state_del(state);
 	return (res);
 }

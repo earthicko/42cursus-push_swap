@@ -48,6 +48,8 @@ typedef struct s_chunksize
 
 t_state	*state_init(t_array *arr);
 void	state_del(t_state *state);
+void	merge_operations(t_state *state);
+void	state_print_op_queue(t_state *state);
 int		do_n_times(t_state *state, int f(t_state *), int n);
 
 int		sa(t_state *state);
